@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-drag: none;
+}
+
+html {
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0a0a0a;
+  width: 100% !important;
+  height: 100%;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+::-webkit-scrollbar-track {
+  background: #2d3748;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #3f518b, #5573d5);
+  border-radius: 4px;
+}
+::selection {
+  background: #3e65b8;
+  color: #fff;
+}
+
+// =========================== Removed Blue Haptic Touch Box =================
+
+@media screen and (max-width: 480px) {
+  * {
+    cursor: default !important;
+  }
+}
+
+// =============== Color Styles =======================
+.gradient-text {
+  background: linear-gradient(122.4deg, #40b3ff 9.03%, #407bff 86.36%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  width: fit-content;
+}
+.gradient-fill {
+  background: linear-gradient(122.4deg, #40b3ff 9.03%, #407bff 86.36%);
+}
+$white: #e8e3e3;
+$lightgrey: #8495b642;
+$grey: #8495b6;
+$background2: #161616;
+$background: #0a0a0a;
+
+// ====================== Text Styles ======================
+.section-heading-text {
+  font-family: "Nunito", "Poppins", sans-serif;
+  color: $lightgrey;
+  text-transform: uppercase;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 70px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-bottom: 80px;
+}
+.primary-text {
+  font-family: "Nunito", "Poppins", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.secondary-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: $grey;
+}
+// Font size for 768px
+@media screen and (max-width: 768px) {
+  .section-heading-text {
+    font-size: 60px;
+    margin-bottom: 40px;
+  }
+  .primary-text {
+    font-size: 32px;
+  }
+  .secondary-text {
+    font-size: 16px;
+  }
+}
+// Font size for 480px
+@media screen and (max-width: 480px) {
+  .section-heading-text {
+    font-size: 50px;
+  }
+  .primary-text {
+    font-size: 28px;
+  }
+  .secondary-text {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+section {
+  padding: 100px 20px;
+}
+.container {
+  height: 100%;
+  max-width: 1200px;
+  margin: auto;
+}

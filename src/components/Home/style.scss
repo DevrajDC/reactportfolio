@@ -1,0 +1,343 @@
+@import "../../index.scss";
+
+// =========================== Hero Section ===========================
+#home {
+  height: 100vh;
+}
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  .hero-text {
+    h1 {
+      font-size: 42px;
+      color: $grey;
+      font-family: "Nunito", "Poppins", sans-serif;
+      line-height: 60px;
+    }
+    span {
+      font-size: 72px;
+    }
+    p {
+      color: $grey;
+      margin: 20px 0;
+      .gradient-text {
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+    button {
+      padding: 8px 20px;
+      color: $white;
+      background-color: $background2;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 10px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .hero-image img {
+    width: 100%;
+  }
+}
+
+// ============================ About section ============================
+#about {
+  background-color: $background2;
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    .about-image {
+      text-align: center;
+    }
+    .about-text {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      p {
+        color: $grey;
+      }
+    }
+  }
+}
+
+// ======================== Experience Section ========================
+.experience-heading {
+  display: flex;
+  gap: 20px;
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+    .line {
+      width: 1px;
+      height: 100%;
+      background: linear-gradient(122.4deg, #40b3ff 9.03%, #407bff 86.36%);
+    }
+  }
+  p {
+    margin-bottom: 20px;
+  }
+}
+.work-experience {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  .experience {
+    display: flex;
+    gap: 10px;
+    .timeline {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      img {
+        background: linear-gradient(122.4deg, #40b3ff 9.03%, #407bff 86.36%);
+        padding: 1px;
+        border-radius: 4px;
+      }
+      .line {
+        width: 1px;
+        height: 100%;
+        background: linear-gradient(122.4deg, #40b3ff 9.03%, #407bff 86.36%);
+      }
+    }
+    .details {
+      background-color: $background2;
+      padding: 20px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      border-radius: 8px;
+      p {
+        color: $grey;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        &:nth-child(1) {
+          color: $white;
+          font-size: 20px;
+        }
+        &:nth-child(4) {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+// ============================= Services Section =============================
+.services-section {
+  padding: 0 20px;
+  margin-bottom: -220px;
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    .services {
+      background-color: #212121;
+      padding: 40px;
+      border-radius: 8px;
+      img {
+        width: 100px;
+      }
+      p {
+        margin-top: 20px;
+      }
+    }
+  }
+  .owl-dot span {
+    opacity: 0.8;
+    background-color: transparent !important;
+    border: 1px solid $grey !important;
+  }
+  .owl-dot:focus {
+    outline: none !important;
+  }
+  .owl-dot.active span {
+    border: none !important;
+    background-color: $grey !important;
+  }
+}
+
+// ======================== Projects Section ========================
+#projects {
+  background-color: $background2;
+  position: relative;
+  .section-heading-text {
+    margin-top: 200px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    .project {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr 1fr;
+      .project-text {
+        .tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          margin: 10px 0;
+          p {
+            padding: 4px 15px;
+            border-radius: 4px;
+            height: 100%;
+            background-color: $background;
+          }
+        }
+        button {
+          padding: 10px 20px;
+          margin: 10px 0;
+          border: none;
+          border-radius: 4px;
+          color: $white;
+          cursor: pointer;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+      .project-image {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .more-projects {
+    padding: 40px 0;
+    margin: auto;
+    text-align: center;
+    p {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    button {
+      padding: 12px 40px;
+      border-radius: 8px;
+      border: none;
+      color: $white;
+      cursor: pointer;
+      background-color: $background;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+// =========================== Testimonials Section ===========================
+#testimonials {
+  .testimonials {
+    .testimonial {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 20px;
+      .testimonial-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .testimonial-text {
+        p {
+          margin-bottom: 20px;
+        }
+        .author-description {
+          .author-name {
+            margin-bottom: 8px;
+            font-size: 20px;
+          }
+          p {
+            font-size: 14px;
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// =========================== Media Queries for 768px ===========================
+@media screen and (max-width: 768px) {
+  // Hero Section
+  .hero {
+    grid-template-columns: 1fr;
+    .hero-text {
+      h1 {
+        span {
+          font-size: 50px;
+        }
+      }
+    }
+    .hero-image {
+      order: -1;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  // About Section
+  .about {
+    grid-template-columns: 1fr !important;
+  }
+  // Experience Section
+  .work-experience {
+    grid-template-columns: 1fr;
+  }
+  // Projects Section
+  .project {
+    grid-template-columns: 1fr !important;
+  }
+  // Testimonials Section
+  #testimonials {
+    .testimonials {
+      .testimonial {
+        grid-template-columns: 1fr;
+        .testimonial-text {
+          .author-description {
+            p {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// =========================== Media Queries for 480px ===========================
+@media screen and (max-width: 480px) {
+  .about-image {
+    img {
+      width: 80%;
+    }
+  }
+  .experience-heading {
+    .timeline {
+      img {
+        width: 20px;
+      }
+    }
+  }
+  .experience {
+    .timeline {
+      img {
+        width: 40px;
+      }
+    }
+  }
+  .testimonial-image {
+    img {
+      width: 50%;
+    }
+  }
+}
