@@ -13,6 +13,7 @@ import Footer from "./components/Footer";
 
 // Importing Local Pages
 import Home from "./pages/Home";
+import Projects from "./pages/Projects";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/home" component={Home} />
+          <Route exact path="/projects" component={Projects} />
 
           <Redirect to="/home" />
         </Switch>
