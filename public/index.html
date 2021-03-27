@@ -39,5 +39,73 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <!-- Muuri Init -->
+    <script>
+      var projectsGrid, artworksGrid, activitiesGrid;
+      const lockDragOnPhone = (grid) => {
+        if (window.innerWidth <= 600) {
+          //Lock Project Drag Sort on Mobile
+          grid.getItems().forEach((item) => {
+            if (!item._drag) return;
+            item._drag.destroy();
+            item._drag = null;
+          });
+        } else {
+          // Enable drag for all items.
+          //Unlock Projects Drag Sort on Desktop
+          grid.getItems().forEach((item) => {
+            if (item._drag) return;
+            item._drag = new Muuri.ItemDrag(item);
+          });
+        }
+      };
+      window.addEventListener("load", function (e) {
+        projectsGrid = new Muuri(".projects-grid", {
+          dragEnabled: true,
+        });
+        artworksGrid = new Muuri(".artworks-grid", {
+          dragEnabled: true,
+        });
+        activitiesGrid = new Muuri(".activities-grid", {
+          dragEnabled: true,
+        });
+
+        lockDragOnPhone(projectsGrid);
+        lockDragOnPhone(artworksGrid);
+        lockDragOnPhone(activitiesGrid);
+        //Initiate Muuri when projects loaded
+        projectsGrid._resizeHandler();
+        //Initiate Muuri when artworks loaded
+        artworksGrid._resizeHandler();
+        //Initiate Muuri when activities loaded
+        activitiesGrid._resizeHandler();
+      });
+
+      window.addEventListener("resize", () => {
+        lockDragOnPhone(projectsGrid);
+        lockDragOnPhone(artworksGrid);
+        lockDragOnPhone(activitiesGrid);
+      });
+
+      //Filter projects
+      document.querySelectorAll(".grid-filter-btns .filter").forEach((item) => {
+        item.addEventListener("click", (e) => {
+          document
+            .querySelectorAll(".grid-filter-btns .filter")
+            .forEach((item) => item.classList.remove("selected"));
+          item.classList.add("selected");
+
+          let filterFieldValue = item.getAttribute("project-type");
+          projectsGrid.filter(function (item) {
+            var element = item.getElement();
+            var isFilterMatch = !filterFieldValue
+              ? true
+              : (element.getAttribute("project-type") || "") ===
+                filterFieldValue;
+            return isFilterMatch;
+          });
+        });
+      });
+    </script>
   </body>
 </html>

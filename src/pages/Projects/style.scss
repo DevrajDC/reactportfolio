@@ -1,0 +1,143 @@
+@import "../../index.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.secondary-text {
+  font-size: 14px;
+  line-height: 20px;
+}
+.section-heading-text {
+  margin-bottom: 60px;
+}
+section {
+  padding: 80px 20px;
+}
+#projects-section {
+  .section-heading-text {
+    margin-bottom: 0;
+    margin-top: 60px;
+  }
+}
+
+.grid-filter-btns {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter {
+  padding: 14px 10px;
+  margin: 0 20px;
+  cursor: pointer;
+  border-bottom: 2px solid $background;
+  transition: 0.3s;
+}
+
+.filter.selected {
+  border-bottom: 2px solid lightskyblue;
+}
+
+.grid {
+  position: relative;
+  width: 100%;
+}
+
+.item {
+  position: absolute;
+  display: block;
+  padding: 0;
+  margin: 10px;
+  width: calc(33.3333% - 20px);
+}
+
+.item-content {
+  position: relative;
+}
+
+img {
+  width: 100%;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 768px) {
+  .filter {
+    margin: 0;
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .item {
+    width: calc(100% - 20px);
+  }
+  .filter {
+    margin: 0;
+    font-size: 14px;
+  }
+}
+
+@keyframes pulse-animation {
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.project {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.project:hover .project-info-overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.project {
+  height: 100% !important;
+}
+
+.overlay-details {
+  transition: 0.3s;
+  transform: translateY(50%);
+}
+
+.project:hover .overlay-details {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0%);
+}
+
+.project:hover img {
+  transform: scale(1.1);
+}
+
+.project-info-overlay {
+  opacity: 0;
+  width: 100%;
+  pointer-events: none;
+  position: absolute;
+  transform: translateY(-100%);
+  transition: 0.3s;
+  height: 100%;
+  width: 100%;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(
+    360deg,
+    #000000 10.9%,
+    rgba(22, 32, 52, 0.2) 100%
+  );
+}
